@@ -1,0 +1,9 @@
+package innerClassInterface;
+
+public class innerUkuran {
+	class besarUkuran {
+		double besar=0.0;
+		
+		int awal=0;
+	}
+}

@@ -1,0 +1,49 @@
+package innerClassInterface;
+
+public class suhu implements transformasiSuhu{
+
+	@Override
+	public double CelsiustoFarenheit(double celcius) {
+		// TODO Auto-generated method stub
+		double hasil = 9*celcius/5 + FARENHEIT;
+		
+		return hasil;
+	}
+
+	@Override
+	public double CelsiustoReamur(double celcius) {
+		// TODO Auto-generated method stub
+		double hasil= 5 * celcius /4;
+		return hasil;
+	}
+
+	@Override
+	public double FarenheittoCelsius(double farenheit) {
+		// TODO Auto-generated method stub
+		double hasil= 5*(farenheit-32)/9;
+		return hasil;
+	}
+
+	@Override
+	public double FarenheittoReamur(double farenheit) {
+		// TODO Auto-generated method stub
+		double hasil= 4*(farenheit-32)/9;
+		return hasil;
+	}
+
+	@Override
+	public double ReamurtoCelsius(double reamur) {
+		// TODO Auto-generated method stub
+		double hasil=4*reamur/5;
+		return hasil;
+	}
+
+	@Override
+	public double ReamurtoFarenheit(double reamur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+
+}

@@ -53,7 +53,6 @@ public class innerUkuran {
 	}
 	
 	
-	
 	double hasil = 0;
 	
 	besarUkuran Ukuranbesar = new besarUkuran("mm", "dm", 7);
@@ -62,24 +61,15 @@ public class innerUkuran {
 		hasil = Ukuranbesar.getBesar() * Ukuranbesar.getSelisih();
 	}
 	
-	public void cetakHasil() {
-		System.out.println("Data anda sebesar " + hasil);
-	}
-	
 	
 	
 	public static void main(String[] args) {
 		innerUkuran cetak = new innerUkuran();
 		System.out.println(cetak.hasil);
 		
-		keluaran.cetakHasil();
+		
+		innerUkuran keluaran = new innerUkuran() {
+			System.out.println(keluaran.hasil);
+		};
 	}
-	
-	static innerUkuran keluaran = new innerUkuran() {
-		public void cetakHasil() {
-			System.out.println("Data anda adalah sebesar " + hasil);
-		}
-	};
-	
 }
-

@@ -1,22 +1,6 @@
 package innerClassInterface;
 
-import java.util.Scanner;
-
 public class suhu implements transformasiSuhu{
-	
-	public static void main(String [] args) {
-		Scanner input = new Scanner(System.in);
-		double inputSuhu = input.nextDouble();
-		
-		suhu Suhu = new suhu();
-		System.out.println("suhu anda dari Celcius ke Farennheit adalah " + Suhu.CelsiustoFarenheit(inputSuhu));
-		System.out.println("suhu anda dari Celcius ke Reamur adalah " + Suhu.CelsiustoReamur(inputSuhu));
-		System.out.println("suhu anda dari Farennheit ke Celcius adalah " + Suhu.FarenheittoCelsius(inputSuhu));
-		System.out.println("suhu anda dari Farennheit ke Reamur adalah " + Suhu.FarenheittoReamur(inputSuhu));
-		System.out.println("suhu anda dari Reamur ke Celcius adalah " + Suhu.ReamurtoCelsius(inputSuhu));
-		System.out.println("suhu anda dari Reamur ke Farennheit adalah " + Suhu.ReamurtoFarenheit(inputSuhu));
-		
-	}
 
 	@Override
 	public double CelsiustoFarenheit(double celcius) {

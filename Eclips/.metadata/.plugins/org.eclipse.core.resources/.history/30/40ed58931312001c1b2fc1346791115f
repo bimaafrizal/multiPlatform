@@ -62,8 +62,8 @@ public class innerUkuran {
 		hasil = Ukuranbesar.getBesar() * Ukuranbesar.getSelisih();
 	}
 	
-	public void cetakHasil() {
-		System.out.println("Data anda sebesar " + hasil);
+	public double getHasil() {
+		return hasil;
 	}
 	
 	
@@ -71,15 +71,16 @@ public class innerUkuran {
 	public static void main(String[] args) {
 		innerUkuran cetak = new innerUkuran();
 		System.out.println(cetak.hasil);
-		
-		keluaran.cetakHasil();
 	}
-	
-	static innerUkuran keluaran = new innerUkuran() {
-		public void cetakHasil() {
-			System.out.println("Data anda adalah sebesar " + hasil);
-		}
-	};
-	
 }
 
+class cobaAnonymous {
+	public static void main(String[] args) {
+		innerUkuran keluaran = new innerUkuran() {
+			public double getHasil() {
+				return hasil+5;
+			}
+		};
+		keluaran.getHasil();
+	}
+}

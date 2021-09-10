@@ -71,15 +71,12 @@ public class innerUkuran {
 	public static void main(String[] args) {
 		innerUkuran cetak = new innerUkuran();
 		System.out.println(cetak.hasil);
-		
-		keluaran.cetakHasil();
 	}
 	
-	static innerUkuran keluaran = new innerUkuran() {
+	innerUkuran keluaran = new innerUkuran() {
 		public void cetakHasil() {
-			System.out.println("Data anda adalah sebesar " + hasil);
+			System.out.println("Data anda sebesar " + hasil);
 		}
 	};
-	
 }
 

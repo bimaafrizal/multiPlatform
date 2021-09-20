@@ -1,0 +1,8 @@
+package id.ac.uns.vokasi.multiplat.io;
+
+public class BacaFile {
+	public static void main(String[] args) {
+		String letak = "D:/Kuliah/Semester 3/Multi-Platform/multiPlatform/dataIO.txt";
+		
+	}
+}

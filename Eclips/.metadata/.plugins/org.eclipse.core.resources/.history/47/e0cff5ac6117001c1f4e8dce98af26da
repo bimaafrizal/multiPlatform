@@ -1,0 +1,7 @@
+package id.ac.uns.vokasi.multiplat.io;
+
+public class TulisFile {
+	public static void main(String [] args) {
+		String letak = "D:Kuliah/Semester 3/Multi-Platform/dataIO.txt";
+	}
+}

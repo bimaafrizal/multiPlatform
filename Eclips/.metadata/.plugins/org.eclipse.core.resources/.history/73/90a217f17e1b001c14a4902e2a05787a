@@ -1,0 +1,77 @@
+package id.ac.uns.vokasi.multiplat.io;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class tugasIO2 {
+	Path path;
+	String isisandata;
+	
+	public void setPath(String data) {
+		path=Paths.get(data);
+		try {
+			Files.createFile(Paths.get(data));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("file sudah ada sebelumnya");
+		}
+	}
+	public void setAnalisis(Path path) {
+		System.out.println("Nama File:");
+		System.out.println(path.getFileName());
+		System.out.println("Parent File");
+		System.out.println(path.getParent());
+		System.out.println("Jumlah subfolder: ");
+		System.out.println(path.getNameCount());
+		System.out.println("Path merupakan absolute:");
+		System.out.println(path.isAbsolute());
+		System.out.println("Subpath dari 0 ke 1: ");
+		System.out.println(path.subpath(0, 1));
+		
+		System.out.println("Tipe Readable:");
+		System.out.println(Files.isReadable(path));
+		System.out.println("Tipe Writeable:");
+		System.out.println(Files.isWritable(path));
+		System.out.println("Tipe executeable");
+		System.out.println(Files.isExecutable(path));
+		System.out.println("Tipe Hidden:");
+		try {
+			System.out.println(Files.isHidden(path));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("apakah sama filenya:");
+		try {
+			System.out.println(Files.isSameFile(path, path));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("file ada: ");
+		System.out.println(Files.exists(path,LinkOption.NOFOLLOW_LINKS));
+	}
+	
+	public static void main(String[] args) {
+		String line="";
+		System.out.println("Masukan path file : ");
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(isr);
+		
+		try {
+			line = in.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		tugasIO2 tugas = new tugasIO2();
+	}
+}
+

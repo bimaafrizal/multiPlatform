@@ -7,17 +7,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
 public class tugasIO {
+	Path path;
+	String isiData="";
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String letak  ="";
 		String inputan ="";
-		
+		Path path = Paths.get(letak);
 		
 		System.out.println("Selamat datang di aplikasi membuat file baru: ");
 		System.out.println("Masukan letak dan nama file!");
@@ -26,6 +30,11 @@ public class tugasIO {
 		System.out.println("Masukan isi dari file!");
 		inputan = sc.nextLine();
 		System.out.println(inputan);
+		
+		tambahFile(letak, inputan);
+		setAnalisis(Paths.get(letak));
+		bacaFile(letak);
+		
 	}
 	
 	public void tambahFile(String letak, String inputan) {
@@ -39,9 +48,9 @@ public class tugasIO {
 			bf.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("Foler tidak ditemukan");
-			System.exit(0);
+			//e.printStackTrace();
+			System.out.println("Foler sudah ada sebelumnya ditemukan");
+			//System.exit(0);
 		}
 	}
 	
@@ -56,21 +65,48 @@ public class tugasIO {
 				if(line != null) fileContent=fileContent+line+"/n";
 			}
 			br.close();
-			Path path = Paths.get(letak);
-			System.out.println(letak + "berisi= " + fileContent);
-			System.out.println("nama file " + path.getFileName());
-			System.out.println("file readble=" + Files.isReadable(path));
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("File tidak ditemukan");
-			System.exit(0);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("File tidak dapat dibaca");
 			System.exit(0);
 		}
+	}
+	
+	public void setAnalisis(Path path) {
+		System.out.print("Nama File:");
+		System.out.println(path.getFileName());
+		System.out.print("Parent File");
+		System.out.println(path.getParent());
+		System.out.print("Jumlah subfolder: ");
+		System.out.println(path.getNameCount());
+		System.out.print("Path merupakan absolute:");
+		System.out.println(path.isAbsolute());
+		System.out.print("Subpath dari 0 ke 1: ");
+		System.out.println(path.subpath(0, 1));
+		
+		System.out.print("Tipe Readable:");
+		System.out.println(Files.isReadable(path));
+		System.out.print("Tipe Writeable:");
+		System.out.println(Files.isWritable(path));
+		System.out.print("Tipe executeable");
+		System.out.println(Files.isExecutable(path));
+		System.out.print("Tipe Hidden:");
+		
+		try {
+			System.out.println(Files.isHidden(path));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.print("apakah sama filenya:");
+		try {
+			System.out.println(Files.isSameFile(path, path));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("file ada: ");
+		System.out.println(Files.exists(path,LinkOption.NOFOLLOW_LINKS));
 	}
 }

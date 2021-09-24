@@ -1,0 +1,11 @@
+package id.ac.uns.vokasi.multiplay.thread;
+
+public class inheritanceThread extends Thread {
+	public inheritanceThread(String name) {
+		super(name);
+	}
+	
+	public void run() {
+		
+	}
+}

@@ -24,20 +24,13 @@ public class inheritanceThread extends Thread {
 		inheritanceThread vespa = new inheritanceThread("vespa");
 		
 		speda.setPriority(MAX_PRIORITY);//memprioritaskan salah satu thread
+		try {
+			speda.join(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		speda.start();
-		try {
-			speda.join(3000);//memberi jeda
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		vespa.start();
-		try {
-			Thread.sleep(7000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Speda masih jalan = " + speda.isAlive()); //mengecek apakah masih jalan
 	}
 }

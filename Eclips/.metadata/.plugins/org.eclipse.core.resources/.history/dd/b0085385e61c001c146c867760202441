@@ -25,19 +25,6 @@ public class inheritanceThread extends Thread {
 		
 		speda.setPriority(MAX_PRIORITY);//memprioritaskan salah satu thread
 		speda.start();
-		try {
-			speda.join(3000);//memberi jeda
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		vespa.start();
-		try {
-			Thread.sleep(7000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Speda masih jalan = " + speda.isAlive()); //mengecek apakah masih jalan
 	}
 }

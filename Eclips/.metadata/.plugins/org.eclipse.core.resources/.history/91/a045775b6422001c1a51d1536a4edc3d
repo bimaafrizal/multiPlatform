@@ -1,0 +1,7 @@
+package id.ac.uns.vokasi.multiplay.thread;
+
+public class sinkronasiObjek extends Thread{
+	static int[] nilai = {
+			40,60,38,10,70
+	};
+}

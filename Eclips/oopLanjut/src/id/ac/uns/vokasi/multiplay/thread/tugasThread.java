@@ -22,10 +22,10 @@ public class tugasThread extends Thread{
 		tugasThread l3 = new tugasThread("l3");
 		tugasThread l4 = new tugasThread("l4");
 		
-		l1.setPriority(MAX_PRIORITY);
-		l3.setPriority(NORM_PRIORITY);
-		l2.setPriority(MIN_PRIORITY);
-		l4.setPriority(MIN_PRIORITY);
+		//l1.setPriority(MAX_PRIORITY);
+		//l3.setPriority(NORM_PRIORITY);
+		//l2.setPriority(MIN_PRIORITY);
+		//l4.setPriority(MIN_PRIORITY);
 		
 		l1.start();
 		l3.start();

@@ -1,0 +1,13 @@
+package id.ac.uns.vokasi.multiplat.awt;
+
+import java.awt.Frame;
+
+public class FrameAwt extends Frame{
+	public FrameAwt() {
+		super("Biodata Mahasiswa");
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new FrameAwt();
+	}
+}

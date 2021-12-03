@@ -40,13 +40,13 @@ public class MainData {
 		newMahasiswa.insertSeveralMahasiswa(dataMahasiswa);**/
 		
 		//delete
-		Mahasiswa maba = new Mahasiswa();
+		/**Mahasiswa maba = new Mahasiswa();
 		maba.setNim("M3111002");
 		MahasiswaModel newMahasiswa = new MahasiswaModel();
-		newMahasiswa.deleteMahasiswa(maba);
+		newMahasiswa.deleteMahasiswa(maba);**/
 		
 		//update
-		/**MahasiswaModel newMahasiswa = new MahasiswaModel();
+		MahasiswaModel newMahasiswa = new MahasiswaModel();
 		Mahasiswa mhs2 = new Mahasiswa();
 		mhs2.setNim("V342002");
 		mhs2.setNama("Arif");
@@ -54,7 +54,7 @@ public class MainData {
 		mhs2.setTmpLahir("pati");
 		mhs2.setTglLahir("2002-10-8");
 		mhs2.setAlamat("Blora");
-		newMahasiswa.updateMahasiswa(mhs2);**/
+		newMahasiswa.updateMahasiswa(mhs2);
 		
 		MahasiswaModel mhs = new MahasiswaModel();
 		int jmlh = mhs.getData().size();

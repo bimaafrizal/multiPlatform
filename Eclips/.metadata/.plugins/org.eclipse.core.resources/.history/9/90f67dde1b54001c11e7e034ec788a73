@@ -1,0 +1,8 @@
+package id.ac.uns.vokasi.multiplat.konekdatabase;
+
+public class MainData {
+	public static void main(String[] args) {
+		MahasiswaModel mahasiswa = new MahasiswaModel();
+		System.out.println(mahasiswa.getData().get(0).getNim());
+	}
+}

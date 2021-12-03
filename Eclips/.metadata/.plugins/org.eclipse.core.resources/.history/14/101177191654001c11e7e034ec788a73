@@ -1,0 +1,55 @@
+package id.ac.uns.vokasi.multiplat.konekdatabase;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MahasiswaModel {
+	Connection con;
+	Statement st;
+	ResultSet rs;
+	ArrayList<Mahasiswa> dataMahasiswa;
+	
+	public MahasiswaModel() {
+		String server = "jdbc:msql://localhost/universitas?username=root&password=";
+		try {
+			Class.forName("com.mysql.jc.Driver");
+			con = DriverManager.getConnection(server);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		dataMahasiswa = new ArrayList<Mahasiswa>();
+	}
+	
+	public ArrayList<Mahasiswa> getData(){
+		String Query = "Select * FROM mahasiswa";
+		try {
+			st = con.createStatement();
+			rs = st.executeQuery(Query);
+			
+			while(rs.next()) {
+				Mahasiswa mhs = new Mahasiswa();
+				mhs.setNim(rs.getString(1));
+				mhs.setNama(rs.getString(2));
+				mhs.setJk(rs.getString(3));
+				mhs.setTmpLahir(rs.getString(4));
+				mhs.setTglLahir(rs.getString(5));
+				mhs.setAlamat(rs.getString(6));
+				
+				dataMahasiswa.add(mhs);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

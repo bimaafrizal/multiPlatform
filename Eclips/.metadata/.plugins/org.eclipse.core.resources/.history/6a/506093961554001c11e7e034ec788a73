@@ -1,0 +1,9 @@
+package id.ac.uns.vokasi.multiplat.konekdatabase;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class MahasiswaModel {
+	Connection con;
+	Statement st;
+}

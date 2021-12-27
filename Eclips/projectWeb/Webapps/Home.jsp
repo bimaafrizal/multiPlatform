@@ -94,7 +94,7 @@
             <h2>Pengumuman</h2>
         </div>
         <div class="container">
-        	<table border="1" width="30%" cellpadding="3">
+        	<table border="1" width="100%" cellpadding="3">
         	<thead>
         	<tr>
         		<th>Nama Siswa</th>
@@ -105,12 +105,12 @@
         	</tr>
         	</thead>
         	<tbody>
-        		<tr>
-        		<% 
+        	<% 
         		ppdbModel ppdb = new ppdbModel(); 
         		int jmlh = ppdb.getData().size();
         		for(int i = 0; i< jmlh;i++) {
         		%>
+        		<tr>
         			<td><% out.print(ppdb.getData().get(i).getNama()); %></td>
         			<td><% out.print(ppdb.getData().get(i).getNis()); %></td>
         			<td><% out.print(ppdb.getData().get(i).getAlamat()); %></td>
@@ -123,7 +123,6 @@
         		<%} %>
         		</tr>
         	</tbody>
-        		
         		
         	</table>
         </div>

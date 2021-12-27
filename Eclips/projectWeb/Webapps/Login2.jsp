@@ -46,8 +46,7 @@
     	String passwword = request.getParameter("password");
     	
     	Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/multiplat_backup?user=root&password=",
-                "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/multiplat_backup?user=root&password=");
         Statement st = con.createStatement();
         ResultSet rs;
         rs = st.executeQuery("SELECT * FROM admin where username= '"+ username + "' && password='"+ passwword+"'");

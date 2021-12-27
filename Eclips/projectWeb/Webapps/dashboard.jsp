@@ -12,9 +12,9 @@
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.util.ArrayList" %>
 <body>
-<table border="1" width="30%" cellpadding="3">
+<table border="1" cellpadding="3" width=100%>
    <tr>
-   		<th>Nomor</th>
+   		<th>ID</th>
   		<th>Nama Siswa</th>
     	<th>Nis</th>
     	<th>Alamat</th>
@@ -22,15 +22,16 @@
      	<th>Status</th>
      	<th>Aksi</th>
   </tr>
-  <tr>
-	<% 
+  <% 
       ppdbModel ppdb = new ppdbModel(); 
       int jmlh = ppdb.getData().size();
       for(int i = 0; i< jmlh;i++) {
 	%>
+  <tr>
+  
 	<td><% out.print(ppdb.getData().get(i).getId_ppdb()); %></td>
     <td><% out.print(ppdb.getData().get(i).getNama()); %></td>
-    	<td><% out.print(ppdb.getData().get(i).getNis()); %></td>
+    <td><% out.print(ppdb.getData().get(i).getNis()); %></td>
 	<td><% out.print(ppdb.getData().get(i).getAlamat()); %></td>
     <td><% out.print(ppdb.getData().get(i).getNilai()); %></td>
     	<% if(ppdb.getData().get(i).getStatus().equals("0")){ %>
@@ -42,11 +43,12 @@
 		<td> 
 	
 	<% if(ppdb.getData().get(i).getStatus().equals("0")){ %>
-		<a class="btn btn-primary" href="terima.jsp?id_ppdb=<%out.print(ppdb.getData().get(i).getId_ppdb());%>">Ubah Terima</a>
+		<a href="terima.jsp?id_ppdb=<%out.print(ppdb.getData().get(i).getId_ppdb());%>">Ubah Terima</a> <br>
 	<% } else { %>
-	<a class="btn btn-primary" href="tdkterima.jsp?id_ppdb=<%out.print(ppdb.getData().get(i).getId_ppdb());%>">Ubah Tidak Terima</a>
+	<a href="tdkterima.jsp?id_ppdb=<%out.print(ppdb.getData().get(i).getId_ppdb());%>">Ubah Tidak Terima</a> <br>
 		<%} %>
-	<a class="btn btn-primary" href="hapus.jsp?id_ppdb=<%out.print(ppdb.getData().get(i).getId_ppdb());%>">Hapus peserta</a>	
+	<a href="edit.jsp?id_ppdb=<% out.print(ppdb.getData().get(i).getId_ppdb()); %>">Edit Data Peserta Didik</a> <br>
+	<a href="hapus.jsp?id_ppdb=<% out.print(ppdb.getData().get(i).getId_ppdb()); %>">Hapus peserta</a> <br>	
 	<%} %>
 
 		</td>

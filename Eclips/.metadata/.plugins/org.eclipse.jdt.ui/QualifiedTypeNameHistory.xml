@@ -53,7 +53,9 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="id.ac.uns.vokasi.multiplat.konekdatabase.MahasiswaModel"/>
     <fullyQualifiedTypeName name="id.ac.uns.vokasi.multiplat.konekdatabase.Mahasiswa"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Out"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.connector.Response"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="id.ac.uns.vokasi.multiplat.konekdatabase.PPDB"/>
 </qualifiedTypeNameHistroy>

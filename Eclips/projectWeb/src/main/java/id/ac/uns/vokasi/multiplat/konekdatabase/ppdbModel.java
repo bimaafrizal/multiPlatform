@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.*;
 
 public class ppdbModel {
 	static Connection con = null;
 	static Statement st;
 	static ResultSet rs;
 	static ArrayList<PPDB> dataPPDB;
+	//boolean login = true;
 	
 	public ppdbModel() {
 		String server = "jdbc:mysql://localhost/multiplat_backup?user=root&password=";
@@ -130,4 +132,21 @@ public class ppdbModel {
 		}
 		return dataPPDB;
 	}
+	
+//	public static boolean login(String password, String username) {
+//		String Query = "SELECT * FROM admin where username= '"+ username + "' && password='"+ password+"'";
+//		
+//		try {
+//			st = con.createStatement();
+//			rs = st.executeQuery(Query);
+//			 if (rs.next()) { 
+//				 response.sendRedirect("dashboard.jsp");
+//			 }
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		return login;
+//	}
 }
